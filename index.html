@@ -1,8 +1,208 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PROJECT — Stand Tall</title>
+  <meta name="description" content="Bold single-page template for high-impact messaging and calls-to-action." />
+  <meta name="author" content="Your Name or Organization" />
+  <style>
+    :root{
+      --accent:#b30000; /* deep red */
+      --accent-dark:#660000;
+      --bg:#0b0b0b;
+      --paper:#f7f7f7;
+      --muted:#8a8a8a;
+      --max-width:1100px;
+      --radius:18px;
+      --sans: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background:linear-gradient(180deg,#060606 0%, #0f0f0f 100%);
+      color:var(--paper);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.35;
+    }
+    .container{max-width:var(--max-width);margin:0 auto;padding:32px}
+
+    /* Hero */
+    .hero{
+      min-height:76vh;
+      display:grid;
+      align-items:center;
+      gap:24px;
+      grid-template-columns:1fr 420px;
+      padding:48px 0;
+    }
+    .hero-left{padding-right:24px}
+    h1{
+      font-size:clamp(40px,6vw,84px);
+      margin:0 0 12px 0;
+      letter-spacing:0.5px;
+      line-height:0.9;
+      text-transform:uppercase;
+      text-shadow:0 6px 24px rgba(0,0,0,0.6);
+    }
+    .strap{font-size:20px;color:var(--paper);opacity:0.92;margin-bottom:18px}
+    .slogan{display:inline-block;padding:10px 18px;background:linear-gradient(90deg,var(--accent),var(--accent-dark));border-radius:999px;font-weight:700}
+
+    .cta-group{display:flex;gap:12px;margin-top:18px}
+    .btn{border:0;padding:14px 20px;border-radius:10px;font-weight:700;cursor:pointer}
+    .btn-primary{background:var(--accent);color:white;box-shadow:0 10px 30px rgba(179,0,0,0.18);}
+    .btn-ghost{background:transparent;color:var(--paper);border:1px solid rgba(255,255,255,0.08)}
+
+    /* Right column poster */
+    .poster{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:28px;border-radius:20px;border:1px solid rgba(255,255,255,0.04);backdrop-filter: blur(6px)}
+    .poster h3{margin:0 0 6px 0;font-size:18px}
+    .poster p{margin:0;color:var(--muted)}
+
+    /* Features */
+    .grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr);margin-top:36px}
+    .card{background:#0f0f0f;padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .card h4{margin:0 0 8px 0}
+    .card p{margin:0;color:var(--muted)}
+
+    /* Manifesto section */
+    .manifesto{margin:48px 0;padding:28px;border-radius:14px;background:linear-gradient(90deg, rgba(179,0,0,0.06), rgba(0,0,0,0.25));border-left:6px solid var(--accent);}
+    .manifesto h2{margin:0 0 8px 0}
+
+    /* Events / CTA strip */
+    .strip{display:flex;align-items:center;justify-content:space-between;padding:18px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+
+    footer{margin-top:56px;padding:42px 0;color:var(--muted)}
+    .logo{font-weight:900;letter-spacing:1px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;min-height:72vh}
+      .poster{order:2}
+      .hero-left{order:1}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:620px){
+      .grid{grid-template-columns:1fr}
+      .cta-group{flex-direction:column}
+    }
+
+    /* utility */
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+  </style>
 </head>
 <body>
-<h1>site under construction</h1>
+  <div class="container">
+    <header style="display:flex;align-items:center;justify-content:space-between">
+      <div class="logo">PROJECT</div>
+      <nav class="muted" aria-label="Main navigation">
+        <a href="#about" style="margin-right:18px;color:inherit;text-decoration:none">About</a>
+        <a href="#action" style="margin-right:18px;color:inherit;text-decoration:none">Act</a>
+        <a href="#events" style="color:inherit;text-decoration:none">Events</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" role="region" aria-labelledby="hero-title">
+        <div class="hero-left">
+          <div class="slogan">FORWARD — RISE</div>
+          <h1 id="hero-title">Stand for the Future</h1>
+          <p class="strap">Concise, bold messaging. A single idea — repeated. Large typography, strong contrast, unforgettable call-to-action.</p>
+
+          <div class="cta-group">
+            <button class="btn btn-primary" onclick="document.getElementById('action').scrollIntoView({behavior:'smooth'})">Take Action</button>
+            <button class="btn btn-ghost" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Join the List</button>
+          </div>
+
+          <div class="grid" style="margin-top:28px">
+            <div class="card">
+              <h4>Simple Slogans</h4>
+              <p class="muted">Short, repeatable lines for banners and shares.</p>
+            </div>
+            <div class="card">
+              <h4>Bold Visuals</h4>
+              <p class="muted">High-contrast imagery and limited palette.</p>
+            </div>
+            <div class="card">
+              <h4>Clear CTA</h4>
+              <p class="muted">One action per page for conversion clarity.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="poster" aria-label="Poster">
+          <h3>Upcoming Rally</h3>
+          <p class="muted">Nov 9 · Main Square · 6:00 PM</p>
+          <hr style="margin:12px 0;border:none;height:1px;background:rgba(255,255,255,0.03)">
+          <p style="margin:0 0 14px 0">Join thousands. Bring signs. Wear red.</p>
+          <div style="display:flex;gap:10px">
+            <button class="btn btn-primary">RSVP</button>
+            <button class="btn btn-ghost">Share</button>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="manifesto" aria-labelledby="about-title">
+        <h2 id="about-title">Manifesto</h2>
+        <p class="muted">Put your core argument here. Keep it under 200 words. Use short paragraphs and repeated phrases to build memorability.</p>
+      </section>
+
+      <section id="action">
+        <div class="strip">
+          <div>
+            <strong>One Clear Action:</strong>
+            <div class="muted">Donate • Volunteer • Share</div>
+          </div>
+          <div style="display:flex;gap:10px">
+            <button class="btn btn-primary">Donate</button>
+            <button class="btn btn-ghost">Volunteer</button>
+          </div>
+        </div>
+
+        <div id="signup" style="margin-top:18px;padding:18px;background:rgba(255,255,255,0.02);border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+          <form onsubmit="event.preventDefault();alert('Thanks — signups saved (stub)')" style="display:flex;gap:10px;flex-wrap:wrap">
+            <input aria-label="Email" placeholder="your@email.com" required style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--paper);min-width:220px">
+            <button class="btn btn-primary" type="submit">Join</button>
+          </form>
+        </div>
+      </section>
+
+      <section style="margin-top:36px">
+        <h3>How to use this template</h3>
+        <ol class="muted">
+          <li>Replace slogans and dates with your own content.</li>
+          <li>Swap images and color variables at the top of the stylesheet.</li>
+          <li>Hook forms/CTAs to your backend or mailing provider.</li>
+        </ol>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div>
+          <div class="logo">PROJECT</div>
+          <div class="muted" style="margin-top:8px">© <span id="year"></span> Your Organization</div>
+        </div>
+        <div class="muted">Built with care • Plain HTML/CSS • Accessible landmarks</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Accessibility: focus outline for keyboard users only
+    (function(){
+      function handleFirstTab(e) {
+        if (e.key === 'Tab') document.body.classList.add('user-is-tabbing');
+      }
+      window.addEventListener('keydown', handleFirstTab);
+    })();
+  </script>
 </body>
 </html>
